@@ -4,57 +4,62 @@ import Container  from '@mui/material/Container';
 import { Box } from '@mui/system';
 
 const Calculator = () => {
-  const [num, setNum] = useState(0);
-  function inputNumber(e){
-    var input = e.target.value;
-    if(num === 0){
-      setNum(input)
-    }else{
-      setNum(num+input);
-    }
-  }
-  function clear(){
-    setNum(0)
-  }
-  function percentage(){
-    setNum(num / 100);
-  }
-  function changeSign(){
-    if(num > 0){
-      setNum(-num)
-    }else {
-      setNum(Math.abs(num))
-    }
-  }
-  function calc(){
-    console.log("Calculou")
-  }
+  const [data, setData] = useState("");
+  const btnsNumber = [];
+  [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, ".", '%'].forEach(item =>{
+    btnsNumber.push(
+      <button onClick={e =>{
+        setData(data + e.target.value)
+        }}
+        value={item} 
+        key={item}
+      >
+        {item}
+      </button>
+    )
+  })
+
+
+
   return (
     <div>
       <Box m={5} />
         <Container maxWidth='xs'>
           <div className='wrapper'>
-            <Box m={12}/>
-            <h1 className="result">{num}</h1>
-            <button onClick={clear}>AC</button>
-            <button onClick={changeSign}>+/-</button>
-            <button onClick={percentage}>%</button>
-            <button className="orange">/</button>
-            <button className="gray" onClick={inputNumber} value ={7}>7</button>
-            <button className="gray" onClick={inputNumber} value ={8}>8</button>
-            <button className="gray" onClick={inputNumber} value ={9}>9</button>
-            <button className="orange">*</button>
-            <button className="gray" onClick={inputNumber} value ={4}>4</button>
-            <button className="gray" onClick={inputNumber} value ={5}>5</button>
-            <button className="gray" onClick={inputNumber} value ={6}>6</button>
-            <button className="orange">-</button>
-            <button className="gray" onClick={inputNumber} value ={1}>1</button>
-            <button className="gray" onClick={inputNumber} value ={2}>2</button>
-            <button className="gray" onClick={inputNumber} value ={3}>3</button>
-            <button className="orange">+</button>
-            <button className="zero" onClick={inputNumber} value ={0}>0</button>
-            <button  onClick={inputNumber} value ={","}>,</button>
-            <button className="orange" onClick={calc}>=</button>
+            <div className="result"><h2>{data}</h2></div>
+            <hr />
+            <div className="digits">{btnsNumber}</div>
+            <div className="modifiers">
+              <button onClick={() => setData(data.substr(0, data.length - 1))}>
+                C
+              </button>
+              <button className="allClear" onClick={() => setData("")}>
+                AC
+              </button>
+            </div>
+            <div className="operations">
+              <button onClick={e => setData(data + e.target.value)} value="+">+</button>
+              <button onClick={e => setData(data + e.target.value)} value="-">-</button>
+              <button onClick={e => setData(data + e.target.value)} value="*">X</button>
+              <button onClick={e => setData(data + e.target.value)} value="/">/</button>
+              <button className="equal" onClick={e =>{
+                  try {
+                    setData(
+                      String(eval(data)).length > 3 &&
+                      String(eval(data)).includes(".")
+                      ? String(eval(data).toFixed(6))
+                      : String(eval(data))
+                    )  
+                  }
+                    catch(err) {
+                      console.log(err)
+                    }
+                }}
+                value="="
+              >
+                =
+              </button>
+            </div>
           </div>
         </Container>
     </div>

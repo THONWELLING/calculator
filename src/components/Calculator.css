@@ -1,36 +1,90 @@
+.wrapper {
+  display: grid;
+  background-color: #141414;
+  border: 3px solid chartreuse;
+  border-radius: 1em;
+  grid-template-areas:
+    "result result result result"
+    "result result result result"
+    "row row row row"
+    "modifiers modifiers modifiers operators"
+    "number number number operators"
+    "number number number operators"
+    "number number number operators";
+}
+.result {
+  grid-area: result;
+  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #404040;
+  color: rgb(68, 129, 6);
+  padding-top: 3em;
+  margin: 4em 3em 2em 3em;
+  border: 1px solid chartreuse;
+  border-radius: 1em;
+}
+.result h2 {
+  right: 0;
+  margin: 1em;
+  font-size: 3em;
+  font-weight: 300;
+  font-style: italic;
+}
+hr {
+  grid-area: row;
+  width: 90%;
+  height: 3px;
+  background-color: rgb(63, 62, 62);
+  border: 0;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+.modifiers {
+  grid-area: modifiers;
+}
+
+.digits {
+  grid-area: number;
+  display: inline-block;
+  padding: 0;
+}
+.operations {
+  grid-area: operators;
+  border: 0;
+  padding-left: 0;
+  margin-left: -3em;
+}
 button {
   width: 3em;
   height: 3em;
+  margin: 5px;
   font-size: 1.5em;
   border: none;
   border-radius: 50%;
-  margin: 0.3em;
+  background-color: #202020;
+  border: 1px solid rgb(35, 70, 1);
 }
 button:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: all ease 0.2s;
+  background-color: #353535;
+  border: 1px solid chartreuse;
 }
-.wrapper {
-  background-color: #141414;
-  border-radius: 1em;
-  padding: 1em;
+.digits button {
+  color: rgb(132, 136, 136);
 }
-.zero {
+.modifiers button,
+.operations button {
+  color: chartreuse;
+}
+.allClear {
   width: 6em;
-  border-radius: 1.5em;
-  font-size: 1.7em;
+  border-radius: 1em;
 }
-.orange {
-  background-color: #ff9500;
+.operations .equal {
+  background-color: chartreuse;
   color: #fff;
-}
-.gray {
-  background-color: #505050;
-  color: #fff;
-}
-.result {
-  color: #fff;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 0.6em;
-  font-size: 3.6em;
+  border: 2px solid #fff;
 }
