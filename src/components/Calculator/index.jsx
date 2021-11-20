@@ -22,9 +22,8 @@ const Calculator = () => {
 
 
   return (
-    <div>
-      <Box m={5} />
-        <Container maxWidth='xs'>
+    <div id="calc">
+        <Container  maxWidth='xs'>
           <div className='wrapper'>
             <div className="result"><h2>{data}</h2></div>
             <hr />

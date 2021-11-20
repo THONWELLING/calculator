@@ -1,8 +1,13 @@
+#calc {
+  max-height: 100vh;
+}
 .wrapper {
   display: grid;
+  height: 78vh;
   background-color: #141414;
   border: 3px solid chartreuse;
   border-radius: 1em;
+  margin-bottom: 10px;
   grid-template-areas:
     "result result result result"
     "result result result result"
@@ -14,12 +19,11 @@
 }
 .result {
   grid-area: result;
-  height: 120px;
+  max-height: 100px;
   display: flex;
   justify-content: flex-end;
   background-color: #404040;
   color: rgb(68, 129, 6);
-  padding-top: 3em;
   margin: 4em 3em 2em 3em;
   border: 1px solid chartreuse;
   border-radius: 1em;
@@ -27,7 +31,8 @@
 .result h2 {
   right: 0;
   margin: 1em;
-  font-size: 3em;
+  font-size: 30px;
+  padding-bottom: 20px;
   font-weight: 300;
   font-style: italic;
 }
@@ -42,18 +47,19 @@ hr {
 }
 .modifiers {
   grid-area: modifiers;
+  padding-left: 27px;
 }
 
 .digits {
   grid-area: number;
   display: inline-block;
-  padding: 0;
+  padding-left: 27px;
+  margin-top: -12px;
 }
 .operations {
   grid-area: operators;
   border: 0;
-  padding-left: 0;
-  margin-left: -3em;
+  margin-left: -1em;
 }
 button {
   width: 3em;
@@ -62,16 +68,8 @@ button {
   font-size: 1.5em;
   border: none;
   border-radius: 50%;
-  background-color: #202020;
-  border: 1px solid rgb(35, 70, 1);
 }
-button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  transition: all ease 0.2s;
-  background-color: #353535;
-  border: 1px solid chartreuse;
-}
+
 .digits button {
   color: rgb(132, 136, 136);
 }
