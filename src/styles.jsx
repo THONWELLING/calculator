@@ -5,8 +5,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-min-width: 100vw;
-max-height: 100vh;
+max-width: 100vw;
+height: auto;
 background-color: #505050;
 align-items: center;
 padding: 0px 30px;

@@ -1,9 +1,6 @@
-#calc {
-  max-height: 100vh;
-}
 .wrapper {
   display: grid;
-  height: 78vh;
+  height: auto;
   background-color: #141414;
   border: 3px solid chartreuse;
   border-radius: 1em;
@@ -54,16 +51,15 @@ hr {
   grid-area: number;
   display: inline-block;
   padding-left: 27px;
-  margin-top: -12px;
 }
 .operations {
   grid-area: operators;
   border: 0;
-  margin-left: -1em;
+  margin-left: -2.5em;
 }
 button {
-  width: 3em;
-  height: 3em;
+  width: 2.7em;
+  height: 2.7em;
   margin: 5px;
   font-size: 1.5em;
   border: none;
