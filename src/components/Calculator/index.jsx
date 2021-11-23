@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Calculator.css';
 import Container  from '@mui/material/Container';
-import { Box } from '@mui/system';
 
 const Calculator = () => {
   const [data, setData] = useState("");
@@ -41,14 +40,12 @@ const Calculator = () => {
               <button onClick={e => setData(data + e.target.value)} value="-">-</button>
               <button onClick={e => setData(data + e.target.value)} value="*">X</button>
               <button onClick={e => setData(data + e.target.value)} value="/">/</button>
-              <button className="equal" onClick={e =>{
+              <button className="equal" onClick={(e)=>{
                   try {
-                    setData(
-                      String(eval(data)).length > 3 &&
-                      String(eval(data)).includes(".")
-                      ? String(eval(data).toFixed(6))
-                      : String(eval(data))
-                    )  
+                   let result = data
+                   if(result) {
+                     setData(eval(result).toFixed(6))
+                   }
                   }
                     catch(err) {
                       console.log(err)

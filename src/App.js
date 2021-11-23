@@ -7,6 +7,7 @@ import * as C from './styles'
 import Header from './components/Header/index'
 import  Home from './Pages/Home'
 import  Trigonometric from './Pages/Trigonometric'
+import NotFound  from './Pages/NotFound';
 
 
 
@@ -16,15 +17,14 @@ function App() {
     <>
       <C.Container>
         <Header />
-        <nav>
-          <button className="btn"><Link to="/Home">Home</Link></button>
-          <button className="btn"><Link to="/Trigonometric">Trigonometric</Link> </button>
-        </nav>
+          <nav>
+            <button className="btn"><Link to="/Home">Home</Link></button>
+            <button className="btn"><Link to="/Trigonometric">Trigonometric</Link> </button>
+          </nav>        
         <Routes>
-          <>
-            <Route  path="/Home" exact element={<Home />} />          
-            <Route path="/Trigonometric" exact element={<Trigonometric />} />
-          </>
+          <Route  path="/Home"  element={<Home  />} />
+          <Route  exact path="/Trigonometric"  element={<Trigonometric />} />
+          <Route  exact path="/*"  element={<NotFound />} />
         </Routes>
       </C.Container>
     </>
