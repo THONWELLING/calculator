@@ -20,11 +20,13 @@ function App() {
           <nav>
             <button className="btn"><Link to="/Home">Home</Link></button>
             <button className="btn"><Link to="/Trigonometric">Trigonometric</Link> </button>
-          </nav>        
+          </nav> 
+
         <Routes>
-          <Route  path="/Home"  element={<Home  />} />
-          <Route  exact path="/Trigonometric"  element={<Trigonometric />} />
-          <Route  exact path="/*"  element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="Home" element={<Home />} />
+          <Route  path="Trigonometric"  element={<Trigonometric /> } />
+          <Route  path="*"  element={<NotFound /> } />
         </Routes>
       </C.Container>
     </>
