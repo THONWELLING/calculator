@@ -3,8 +3,8 @@
   height: auto;
   background-color: #141414;
   border: 3px solid chartreuse;
-  border-radius: 1em;
-  margin-bottom: 10px;
+  border-radius: 2em;
+  padding-bottom: 3rem;
   grid-template-areas:
     "result result result result"
     "result result result result"
@@ -16,9 +16,10 @@
 }
 .result {
   grid-area: result;
-  max-height: 100px;
+  height: 150px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   background-color: #404040;
   color: rgb(68, 129, 6);
   margin: 4em 3em 2em 3em;
@@ -27,30 +28,31 @@
 }
 .result h2 {
   right: 0;
-  margin: 1em;
-  font-size: 30px;
-  padding-bottom: 20px;
+  margin: 20px;
+  font-size: 50px;
   font-weight: 300;
   font-style: italic;
 }
 hr {
   grid-area: row;
   width: 90%;
-  height: 3px;
+  height: 5px;
   background-color: rgb(63, 62, 62);
   border: 0;
   border-radius: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .modifiers {
   grid-area: modifiers;
-  padding-left: 27px;
+  padding-left: 30px;
+  margin-left: 10px;
 }
 
 .digits {
   grid-area: number;
   display: inline-block;
-  padding-left: 27px;
+  padding-left: 30px;
+  margin-left: 10px;
 }
 .operations {
   grid-area: operators;
@@ -62,7 +64,6 @@ button {
   height: 2.7em;
   margin: 5px;
   font-size: 1.5em;
-  border: none;
   border-radius: 50%;
 }
 
@@ -81,4 +82,37 @@ button {
   background-color: chartreuse;
   color: #fff;
   border: 2px solid #fff;
+}
+/*
+            RESPONSIVIDADE
+*/
+@media (max-width: 500px) {
+  .wrapper {
+    width: 300px;
+  }
+  .result {
+    height: 70px;
+  }
+  .result h2 {
+    margin: 10px;
+    font-size: 25px;
+  }
+  .modifiers {
+    padding-left: 0px;
+    margin-left: 30px;
+  }
+  .digits {
+    padding-left: 0px;
+    margin-left: 30px;
+  }
+  .operations {
+    border: 0;
+    margin-left: -35px;
+  }
+  button {
+    width: 3em;
+    height: 3em;
+    font-size: 1em;
+    border-radius: 50%;
+  }
 }

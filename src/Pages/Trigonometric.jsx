@@ -8,10 +8,10 @@ const Trigonometric = () => {
   console.log(params)
   return (  
     <>
-    <C.Container>
-      <Card />
-    </C.Container>
-    </>
+      <C.Container>
+        <Card />
+      </C.Container>
+      </>
   );
 }
  

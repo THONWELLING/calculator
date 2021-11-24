@@ -9,7 +9,12 @@ max-width: 100vw;
 height: auto;
 background-color: #505050;
 align-items: center;
+justify-content: center;
 padding: 0px 30px;
+
+  h1 {
+    font-size: 50px
+  }
   nav {
     display: flex;
     justify-content: flex-end;
@@ -37,4 +42,19 @@ padding: 0px 30px;
       color: chartreuse;
     }
   }
+
+  @media(max-width: 500px) {
+    
+    nav {
+      flex-direction: column;
+      margin-top: 0;
+      padding: 0px 30px;
+      justify-content: center;
+    }
+
+  
+  }
+  
+
+  
 `

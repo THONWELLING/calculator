@@ -9,11 +9,12 @@ import detetive from '../assets/not-found.png'
 const NotFound = () => {
   return (  
     <CardWrapper>
-        <img src={detetive} alt="fundo de detetive" 
+      <img src={detetive} alt="fundo de detetive" 
         style={{
           backgroundPosition: "center",
           backgroundSize: "cover",
-        }} />
+        }} 
+      />
       <h1 
         style={{
           display: 'flex ',

@@ -2,8 +2,8 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 
 
-import './App.css';
 import * as C from './styles'
+import { Button } from './components/Button';
 import Header from './components/Header/index'
 import  Home from './Pages/Home'
 import  Trigonometric from './Pages/Trigonometric'
@@ -17,10 +17,10 @@ function App() {
     <>
       <C.Container>
         <Header />
-          <nav>
-            <button className="btn"><Link to="/Home">Home</Link></button>
-            <button className="btn"><Link to="/Trigonometric">Trigonometric</Link> </button>
-          </nav> 
+        <nav>
+          <Button className="btn"><Link to="/Home">Home</Link></Button>
+          <Button className="btn"><Link to="/Trigonometric">Trigonometric</Link></Button>
+        </nav> 
 
         <Routes>
           <Route path="/" element={<Home />} />
